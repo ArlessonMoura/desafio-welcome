@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-prettier"],
+  "fix": true,
+  "rules": {
+    "max-nesting-depth": [1, { "ignore": ["pseudo-classes"] }]
+  }
+}
