@@ -21,5 +21,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'no-plusplus': 'off',
+    'import/extensions': ['error', 'never', { css: 'always', scss: 'always' }],
   },
 };
