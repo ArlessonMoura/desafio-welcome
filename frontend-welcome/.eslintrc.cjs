@@ -8,13 +8,14 @@ module.exports = {
     'airbnb-typescript/base',
     'prettier',
   ],
-  parser: '@typescript-eslint/parser',
+  ignorePatterns: ['vite.config.ts', '.eslintrc.cjs'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     tsconfigRootDir: __dirname,
     project: 'tsconfig.eslint.json',
   },
+  parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', 'import'],
   rules: {
     'react-refresh/only-export-components': 'warn',
@@ -22,5 +23,13 @@ module.exports = {
     'react/prop-types': 'off',
     'no-plusplus': 'off',
     'import/extensions': ['error', 'never', { css: 'always', scss: 'always' }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
   },
 };
