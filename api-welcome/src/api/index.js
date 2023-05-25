@@ -10,6 +10,6 @@ const PORT = 3000;
 app.listen(PORT, () => console.log(`conectado na porta ${PORT}`));
 
 app.use('/', routerSchedule);
-app.use('/recipes', routerSchedule);
+app.use('/tasks', routerSchedule);
 
 module.exports = app;

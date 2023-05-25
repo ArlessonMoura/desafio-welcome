@@ -9,9 +9,9 @@ router.get('/', (_request, response) => {
   response.status(200).json({ path: '/' });
   console.log('Cê é o bichão mêmo, hein doido.');
 });
-router.get('/tasks', allTasks);
-router.post('/tasks', insert);
-router.patch('/tasks:id', update);
-router.delete('/tasks:id', deleteById);
+router.get('/', allTasks);
+router.post('/', insert);
+router.patch('/:id', update);
+router.delete('/:id', deleteById);
 
 module.exports = router;
