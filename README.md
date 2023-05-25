@@ -1,70 +1,90 @@
 # Desafio W3lcome
 
-Uma breve descrição sobre o que esse projeto faz e para quem ele é
+Contém um projeto frontend de 'lista de tarefas', e sua API com CRUD básico.
 
 ## Stack utilizada
 
-**Front-end:** React, Redux, TailwindCSS
+**Front-end:** React (yarn vite), Typescript, Material Ui, ESlint, Prettier e Stylelint.
 
-**Back-end:** Node, Express
-
-## Instalação
-
-Instale my-project com npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
+**Back-end:** Node, Express, Nodemon, ESlint, Prettier e Stylelint.
 
 ## Rodando localmente
 
 Clone o projeto
 
 ```bash
-  git clone https://link-para-o-projeto
+  git clone https://github.com/ArlessonMoura/desafio-welcome
 ```
 
-Entre no diretório do projeto
+**Front-end:**
+Entre no diretório fronten-welcome e Instale as dependências
 
 ```bash
-  cd my-project
+  yarn
 ```
 
-Instale as dependências
+Depois rode o script para ser o projeto rodar em localhost no browser
 
 ```bash
-  npm install
+  yarn dev
 ```
 
-Inicie o servidor
+**Back-end:**
+
+Entre no diretório api-welcome e Instale as dependências
 
 ```bash
-  npm run start
+  yarn
+```
+
+Inicie o servidor em 'hot loading' com NODEMON
+
+```bash
+  yarn dev
 ```
 
 ## Documentação da API
 
+As regras de negócios manipulam um array de objetos em um arquivo JSON;
+
+obj = { id: NUMBER\_(PK), titulo: STRING, concluida: BOOL };
+
 #### Retorna todos os itens
 
 ```http
-  GET /api/items
+  GET /tasks
 ```
 
-| Parâmetro | Tipo     | Descrição                           |
-| :-------- | :------- | :---------------------------------- |
-| `api_key` | `string` | **Obrigatório**. A chave da sua API |
+| Parâmetro | Tipo   | Descrição               |
+| :-------- | :----- | :---------------------- |
+| `empty`   | `null` | Retorna array com tasks |
 
-#### Retorna um item
+#### Adiciona uma nova tarefa
 
 ```http
-  GET /api/items/${id}
+  post /tasks
 ```
 
-| Parâmetro | Tipo     | Descrição                                   |
-| :-------- | :------- | :------------------------------------------ |
-| `id`      | `string` | **Obrigatório**. O ID do item que você quer |
+| Parâmetro           | Tipo     | Descrição                         |
+| :------------------ | :------- | :-------------------------------- |
+| `titulo, concluida` | `string` | Retorna array de tasks resultante |
 
-#### add(num1, num2)
+#### Atualiza um item
 
-Recebe dois números e retorna a sua soma.
+```http
+  PATCH /tasks/${id}
+```
+
+| Parâmetro | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | Retorna array de tasks resultante |
+
+#### Deleta um item
+
+```http
+  DELETE /tasks/${id}
+```
+
+| Parâmetro | Tipo     | Descrição                         |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `number` | Retorna array de tasks resultante |
